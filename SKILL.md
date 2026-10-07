@@ -59,7 +59,7 @@ Because `page.locator(...)` is typed to return `Locator`, and `Page`/`Browser`/`
 
 ## A full worked example
 
-This is real, working code (adapted from https://github.com/testingexamples/demo-playwright-typescript), run with `ts-node` against the free fixture page https://testingexamples.github.io:
+This is real, working code (adapted from https://github.com/testingexamples/demo-playwright-typescript), run with `ts-node` against the free fixture page https://testingexamples.github.io/en-001/practice/:
 
 ```typescript
 #!/usr/bin/env ts-node
@@ -72,7 +72,7 @@ async function demo(): Promise<void> {
     const page: Page = await context.newPage();
 
     try {
-        await page.goto("https://testingexamples.github.io");
+        await page.goto("https://testingexamples.github.io/en-001/practice/");
 
         // Find an element by id.
         const elementById: Locator = page.locator('#id-example-1');
@@ -138,7 +138,7 @@ A **real test** uses the `@playwright/test` test runner and its `expect()` — w
 import { test, expect } from '@playwright/test';
 
 test('id example has expected text', async ({ page }) => {
-  await page.goto('https://testingexamples.github.io');
+  await page.goto('https://testingexamples.github.io/en-001/practice/');
   await expect(page.locator('#id-example-1')).toHaveText('Id Example 1');
 });
 ```
@@ -161,12 +161,12 @@ Rule of thumb: reach for a plain script like the worked example above only for e
 
 ## Learn more / real examples
 
-- https://github.com/testingexamples/demo-playwright-typescript — locator-strategy walkthrough against https://testingexamples.github.io (the generic fixture target).
+- https://github.com/testingexamples/demo-playwright-typescript — locator-strategy walkthrough against https://testingexamples.github.io/en-001/practice/ (the generic fixture target).
 - https://github.com/testingexamples/demo-playwright-typescript-for-google-search — same patterns applied to Google Search. **Illustrative only**: Google's Terms of Service restrict automated querying of Google Search, so this repo is meant to show tool syntax, not to be run repeatedly against the live site.
 - https://github.com/testingexamples/demo-playwright-typescript-for-google-maps — same patterns applied to Google Maps. **Illustrative only**, for the same reason: Google's Terms of Service restrict automated querying of Google Maps.
 - https://github.com/testingexamples/demo-playwright-typescript-for-nhs-wales — a real test suite with real assertions against https://www.nhs.wales/.
 - https://playwright.dev/docs/intro — official Playwright documentation.
-- https://testingexamples.github.io/ — the free fixture page these demos target; safe to run against repeatedly.
+- https://testingexamples.github.io/en-001/practice/ — the free fixture page these demos target; safe to run against repeatedly.
 
 ---
 
